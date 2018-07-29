@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/*通用样式*/
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: "SimHei";
+		}
+		.f-left{
+			float: left;
+		}
+		.f-right{
+			float: right;
+		}
+		/*清除浮动*/
+		.clearfix:after{
+			content: "clear";
+			height: 0;
+			display: block;
+			clear: both;
+			overflow: hidden;
+			visibility: hidden;
+		}
+		.clearfix{
+			*zoom:1;
+		}
+		/*头部导航*/
+		.header-container{
+			width: 1280px;
+			height: 55px;
+			margin: 0 auto;
+			/*background: #ccc;*/
+		}
+		.header-container h1{
+			font-size: 21px;
+			line-height: 55px;
+			font-weight: normal;
+		}
+		.header-container h1 i{
+			background: url(images/logo.png) no-repeat;
+			background-size: 31px;
+			width: 31px;
+			height: 31px;
+			display: inline-block;
+			margin: 0px 10px -7px 59px;
+		}
+		.header-container h1 a{
+			text-decoration: none;
+			color: rgb(58,58,58);
+
+		}
+		.header-container nav ul{
+			list-style: none;
+		}
+		.header-container nav ul li{
+			float: left;
+			height: 55px;
+			width: 65px;
+			text-align: center;
+			margin-right: 45px;
+		}
+		.header-container nav ul li a{
+			width: 65px;
+		}
+		.header-container nav ul li:last-child{
+			position: relative;
+		}
+		.header-container nav ul li i{
+			background: url(images/登录图标.png) no-repeat;
+			display: inline-block;
+			width: 14px;
+			height: 17px;
+			position: absolute;
+			top: 18px;
+
+		}
+		.header-container nav ul li a:link,.header-container nav ul li a:visited{
+			text-decoration: none;
+			color: rgb(120,120,120);
+			display: inline-block;
+			height: 55px;
+			padding-top: 18px;
+			box-sizing: border-box;
+			font-size: 16px;
+		}
+		.header-container nav ul li a:active,.header-container nav ul li a:hover{
+			border-bottom: 5px solid #e74f4d;
+			color: #e74f4d;
+
+		}
+		/*活动banner*/
+		.banner{
+			width: 1280px;
+			height: 690px;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+		}
+		.banner img{
+			width: 100%;
+		}
+		.banner .banner-title{
+			position: absolute;
+			left: 115px;
+			top: 230px;
+		}
+		.banner .banner-title h2{
+			font-size: 60px;
+			font-family: "Microsoft YaHei";
+			font-weight: normal;
+			color: #ffffff;
+			margin-bottom: 10px;
+		}
+		.banner .banner-title p{
+			font-size: 21px;
+			font-family: "Microsoft YaHei";
+			color: #fffdfd;
+			margin-left: 10px;
+		}
+		.banner .banner-title a{
+			display: inline-block;
+			width: 330px;
+			height: 62px;
+			background-color: #e74f4d;
+			color: #ffffff;
+			text-decoration: none;
+			font-size: 30px;
+			text-align: center;
+			padding-top: 16px;
+			box-sizing: border-box;
+			margin-top: 65px;
+		}
+		.banner .banner-title a:hover{
+			background-color: #e18583;/*可以删掉，自己加的*/
+		}
+		/*banner下方的文字区*/
+		.banner-bottom{
+			width: 1334px;
+			height: 250px;
+			margin: 0 auto;
+		}
+		.banner-bottom li{
+			width: 331px;
+			height: 100%;
+			float: left;
+			list-style: none;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		.banner-bottom ul li:first-child{
+			background: url(images/图标a.png) no-repeat 50% 45px;
+		}
+		.banner-bottom ul li:first-child + li{
+			background: url(images/图标b.png) no-repeat 50% 45px;
+		}
+		.banner-bottom ul li:first-child +li+li{
+			background: url(images/图标c.png) no-repeat 50% 45px;
+		}
+		.banner-bottom ul li:first-child +li+li+li{
+			background: url(images/图标d.png) no-repeat 50% 45px;
+		}
+		.banner-bottom li p{
+			margin-top: 133px;
+			margin-bottom: 65px;
+			height: 52px;
+			padding: 0 70px;
+			display: inline-block;
+			border-right: 2px solid #767777;
+			color: rgb(119,119,119);
+		}
+		.banner-bottom ul>li:last-child p{
+			border: none;
+		}
+/*		可以考虑定位方法做
+		.banner-bottom li{
+			height: 52px;
+			width: 331px;
+			float: left;
+			text-align: center;
+			list-style: none;
+			color: rgb(119,119,119);
+			margin-top: 113px;
+			padding: 0 70px;
+			box-sizing: border-box;
+		}
+		
+		.banner-bottom ul>li+li{
+			border-left: 2px solid #767777;
+		}
+		.banner-bottom ul li:first-child{
+			background: url(images/图标a.png) no-repeat 50% 0px;
+		}*/
+		/*中间灰色长条区域*/
+		.middle-grey{
+			height: 360px;
+			width: 100%;
+			background-color: #edecec;
+		}
+		.middle-grey-wrap{
+			width: 1280px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.middle-grey-wrap img{
+			padding: 87px 0 45px 0;
+		}
+		.middle-grey-wrap p{
+			color: rgb(130,130,130);
+			font-size: 51px;
+			font-family: "黑体";
+		}
+		/*中部搜索区域*/
+		.search{
+			width: 1280px;
+			height: 340px;
+			margin: 0 auto;
+			background: url(images/map.jpg) no-repeat;
+			position: relative;
+		}
+		.search .search-shadow{
+			width: 100%;
+			height: 100%;
+			background: rgba(170,52,50,0.2);
+			position: absolute;
+		}
+		.search-wrap{
+			margin: 0 auto;
+			text-align: center;
+			padding-top: 52px;
+			position: relative;
+		}
+		.search-wrap h2{
+			color: #fff;
+			font-size: 21px;
+			font-family: "微软雅黑";
+			font-weight: normal;
+		}
+		.search-wrap>span{
+			display: block;
+			width: 30px;
+			border-top: 3px solid #fff;
+			margin: 0 auto;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+		.search-wrap p{
+			font-size: 12px;
+			color: #fff;
+			font-family: "微软雅黑";
+		}
+		/*.search-wrap ul{
+			list-style: none;
+			margin: 50px 125px 0 125px;
+		}
+		.search-wrap ul li{
+			float: left;
+			width: 235px;
+			height: 35px;
+			margin-right: 30px;
+		}
+		.search-wrap ul li:last-child{
+			margin-right: 0;
+		}
+		.search-wrap ul li select,.search-wrap ul li input{
+			width: 100%;
+			height: 100%
+		}
+		.search-wrap ul li input{
+			background-color: #be4e48;
+			color: #fff;
+		}
+		.search-wrap ul li select{
+			color: rgb(170,170,170);
+		}*/
+		.search-wrap ul{
+			list-style: none;
+			margin: 50px 125px 0 125px;
+		}
+		.search-wrap ul li{
+			float: left;
+			width: 235px;
+			height: 35px;
+			margin-right: 30px;
+			background-color: #fff;
+			text-align: left;
+			line-height: 35px;
+			border: 1px solid #BE4E48;
+			box-sizing: border-box;
+			padding-right: 27px;
+			position: relative;
+		}
+		.search-wrap ul li span{
+			color: #a8aaaa;
+			font-size: 12px;
+			font-family: "微软雅黑";
+			padding-left: 10px;
+		}
+		.search-wrap ul li img{
+			display: inline-block;
+			width: 18px;
+			height: 17px;
+			background: url(images/down_arrow.jpg);
+			position: absolute;
+			right: 9px;
+			top: 9px;
+		}
+		.search-wrap ul li:last-child{
+			margin-right: 0;
+		}
+		.search-wrap ul li input{
+			width: 235px;
+			height: 35px;
+			background-color: #be4e48;
+			color: #fff;
+			border: #be4e48;
+			position: absolute;
+			top: 0;
+			cursor: pointer;
+		}
+		.search-wrap .contry-list{
+			width: 235px;
+			box-sizing: border-box;
+			border: 1px solid #be4e48;
+			border-top: none;
+			background-color: #e3e2e4;
+			position: absolute;
+			top: 34px;
+			left: -1px;
+			/*搞不清楚这里为什么上面和左边都差了1px*/
+			box-sizing: border-box;
+			display: none;
+		}
+		.search-wrap .contry-list a{
+			display: block;
+			text-decoration: none;
+			height: 27px;
+			color: #323333;
+			font-size: 12px;
+			line-height: 27px;
+			padding-left: 30px;
+			position: relative;
+		}
+		.search-wrap .contry-list a i{
+			height: 20px;
+			width: 20px;
+			display: block;
+			background: url(images/down-right.png);
+			position: absolute;
+			left: 4px;
+			top : 4px;
+			visibility: hidden;
+		}
+		.search-wrap .contry-list a:hover{
+			background-color: #BE4E48;
+			color: #fff;
+		}
+		.search-wrap .contry-list a:hover i{
+			visibility: visible;
+		}
+		.search-wrap ul li:hover .contry-list{
+			display: block;
+		}
+		/*活动区样式*/
+		.activity{
+			width: 1280px;
+			height: 605px;
+			background-color: #f7f7f7;
+			margin: 0 auto;
+			padding: 101px 148px 114px 148px;
+			box-sizing: border-box;
+		}
+		.activity ul{
+			list-style: none;
+		}
+		.activity ul li{
+			width: 219px;
+			height: 390px;
+			margin-right: 36px;
+			/*background-color: red;*/
+			float: left;
+			text-align: center;
+		}
+		.activity ul li:last-child{
+			margin-right: 0;
+		}
+		.activity ul li img{
+			border: 1px solid #ccc;
+			padding: 12px 7px;
+			background-color: #fff;
+		}
+		.activity ul li h3{
+			font-size: 14px;
+			font-family: "微软雅黑";
+			font-weight: normal;
+			margin: 10px 0;
+		}
+		.activity ul li p{
+			font-size: 12px;
+			font-family: "微软雅黑";
+			color: rgb(130,130,130);
+		}
+		.activity .active{
+			position: relative;
+		}
+		.activity .active img{
+			position: absolute;
+			margin-top: 53px;
+			left: 0;
+		}
+		.activity .active h3{
+			width: 203px;
+			height: 27px;
+			font-size: 20px;
+			margin: 2px 0;
+			padding: 0 10px;
+			text-align: justify;
+		}
+		.activity .active h3:after{
+			content: " ";  
+			display: inline-block;
+			width: 100%;
+		/*	
+			这个伪类是为了实现文字两端对齐必需要加的。为了兼容火狐，需要人为的在html里把汉字之间加上一个空格隔开。
+			display: inline-block;
+			content: "";
+			overflow: hidden;
+			width: 100%;
+			height: 0;*/
+		}
+		/*活动介绍区轮播图样式*/
+		.intro{
+			width: 1280px;
+			height: 567px;
+			margin: 0 auto;
+		}
+		.intro-left{
+			width: 850px;
+			height: 100%;
+			position: relative;
+		}
+		.intro-left div{
+			height: 0;
+			width: 0;
+			border-top: 15px;
+			border-bottom: 15px;
+			border-left: 6px;
+			border-right: 24px;
+			border-style: solid;
+			border-color: transparent #fff transparent transparent;
+			position: absolute;
+			top: 50%;
+			right: 0;
+		}
+		.intro-right{
+			width: 290px;
+			height: 100%;
+			padding: 0 70px;
+		}
+		.intro-right h3{
+			margin-top: 165px;
+			margin-bottom: 20px;
+			font-size: 21px;
+			font-family: "黑体";
+			font-weight: normal;
+			text-align: center;
+		}
+		.intro-right h3 span{
+			color: #BE4E48;
+		}
+		.intro-right > p{
+			font-size: 12px;
+			font-family: "宋体";
+			line-height: 30px;
+			color: rgb(130,130,130);
+			margin-bottom: 50px;
+		}
+		.intro-right a{
+			text-decoration: none;
+
+		}
+		.intro-right a p{
+			border: 1px solid #BE4E48;
+			width: 105px;
+			height: 33px;
+			text-align: center;
+			line-height: 33px;
+			color: #BE4E48;
+			margin: 0 auto;
+		}
+		.intro-right a:hover p{
+			border: 1px solid #BE4E48;
+			width: 105px;
+			height: 33px;
+			text-align: center;
+			line-height: 33px;
+			color: #fff;
+			background-color: #BE4E48;
+			margin: 0 auto;
+		}
+		.intro-right ul{
+			list-style: none;
+			margin-top: 25px;
+			text-align: center;
+		}
+		.intro-right ul li{
+			width: 10px;
+			height: 10px;
+			border-radius: 10px;
+			border: 1px solid #999;
+			display: inline-block;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.intro-right ul .intro-active{
+			background-color: #999;
+		}
+		/*新时代区域样式*/
+		.new-time{
+			width: 1280px;
+			height: 520px;
+			margin: 0 auto;
+		}
+		.new-time .new-time-left{
+			width: 425px;
+			height: 520px;
+			background-color: #e74f4d;
+			float: left;
+			text-align: center;
+			padding: 170px 0 200px 0;
+			box-sizing: border-box;
+		}
+		.new-time .new-time-left p{
+			font-size: 21px;
+			font-family: "黑体";
+			color: #fff;
+		}
+		.new-time .new-time-left div{
+			width: 30px;
+			height: 2px;
+			background-color: #fff;
+			display: inline-block;
+			margin: 25px 0;
+		}
+		.new-time .new-time-left a{
+			display: block;
+			width: 170px;
+			height: 45px;
+			border: 1px solid #fff;
+			margin: 0 auto;
+			text-decoration: none;
+			font-size: 21px;
+			line-height: 45px;
+			color: #fff;
+		}
+		.new-time .new-time-middle{
+			width: 425px;
+			height: 100%;
+/*			background-color: yellow;*/
+			float: left;
+			text-align: center;
+			padding: 170px 0 200px 0;
+			box-sizing: border-box;
+		}
+		.new-time .new-time-middle p{
+			font-size: 21px;
+			font-family: "黑体";
+		}
+		.new-time .new-time-middle div{
+			width: 30px;
+			height: 2px;
+			background-color: #ddd;
+			display: inline-block;
+			margin: 25px 0;
+		}
+		.new-time .new-time-middle a{
+			display: block;
+			width: 170px;
+			height: 45px;
+			border: 1px solid #e74f4d;
+			margin: 0 auto;
+			text-decoration: none;
+			font-size: 21px;
+			line-height: 45px;
+			color: #e74f4d;
+		}
+		.new-time .new-time-right{
+			width: 430px;
+			height: 520px;
+			margin-left: 850px;
+			position: relative;
+		}
+		.new-time .new-time-right div{
+			height: 0;
+			width: 0;
+			border-top: 15px;
+			border-bottom: 15px;
+			border-left: 24px;
+			border-right: 6px;
+			border-style: solid;
+			border-color: transparent  transparent transparent #fff;
+			position: absolute;
+			top: 50%;
+			left: 0;
+		}
+		.new-time .new-time-right span{
+			width: 430px;
+			height: 520px;
+			background-color: rgba(0,0,0,0.4);
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+		.new-time .new-time-right:hover span{
+			display: block;
+		}
+		.volunteer{
+			width: 1280px;
+			margin: 0 auto;
+			text-align: center;	
+			margin-bottom: 165px;
+		}
+		.volunteer .volunteer-head{
+			padding: 118px 0 105px 0;
+		}
+		.volunteer .volunteer-head h3{
+			font-size: 21px;
+			font-weight: normal;
+			font-family: "黑体";
+		}
+		.volunteer .volunteer-head i{
+			display: block;
+			width: 30px;
+			height: 2px;
+			margin: 8px auto 15px;
+			background-color: #e74f4d;
+		}
+		.volunteer .volunteer-head p{
+			font-family: "微软雅黑";
+			font-size: 12px;
+			color: #aaaaaa;
+		}
+		.volunteer .volunteer-left{
+			margin: 0 72px 0 138px;
+			width: 292px;
+			float: left;
+			/*background-color: blue;*/
+		}
+		.volunteer .volunteer-left .volunteer-item{
+			margin-bottom: 30px;
+		}
+		.volunteer .volunteer-left .volunteer-item h4{
+			font-size: 14px;
+			font-family: "黑体";
+			margin-bottom: 25px;
+			color: #777;
+
+		}
+		.volunteer .volunteer-left .volunteer-item p{
+			font-family: "宋体";
+			font-size: 12px;
+			color: #777;
+			text-align: left;
+			line-height: 20px;
+		}
+		.volunteer .volunteer-left .volunteer-item .more{
+			text-align: right;
+			color: #777;
+			background: url(images/down-1.jpg) no-repeat 245px 5px;
+			cursor: pointer;
+		}
+		.volunteer .volunteer-right{
+			width: 638px;
+			height: 282px;
+			margin-right: 140px;
+			float: left;
+			text-align: left;
+			background-color: #ededef;
+		}
+		.volunteer .volunteer-right .volunteer-right-nomal{
+			width: 310px;
+			height: 40px;
+			line-height: 40px;
+			margin-bottom: 14px;
+			display: inline-block;
+			background-color: #ededef;
+			position: relative;
+		}
+		.volunteer .volunteer-right .volunteer-right-nomal span{
+			margin-left: 15px;
+			color: #666;
+		}
+		.volunteer-right .volunteer-name input,.volunteer-right .volunteer-age input{
+			width: 243px;
+			height: 40px;
+			background-color: #ededef;
+			border: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.volunteer-right .volunteer-tel input,.volunteer-right .volunteer-address input{
+			width: 215px;
+			height: 40px;
+			background-color: #ededef;
+			border: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.volunteer-right .volunteer-name,.volunteer-right .volunteer-tel{
+			margin-right: 17px;
+		}
+		.volunteer-right textarea{
+			padding: 10px 20px;
+			width: 638px;
+			height: 120px;
+			box-sizing: border-box;
+			background-color: #ededef;
+			font-size: 16px;
+			resize: none;
+			border: none;
+		}
+		.volunteer-right .submit-bottom input{
+			width: 638px;
+			height: 40px;
+			margin-top: 15px;
+			background-color: #ededef;
+			border: none;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.volunteer-right .submit-bottom input:hover{
+			background-color: #e74f4d;
+		}
+		/*联系我们*/
+		.contact-wrap{
+			width: 100%;
+			height: 360px;
+			background-color: #33363f;
+		}
+		.contact{
+			width: 1280px;
+			height: 270px;
+			background-color: #33363f;
+			margin: 0 auto;
+			text-align: center;
+			padding-top: 90px;
+		}
+		.contact h3{
+			color: #fff;
+			font-size: 21px;
+			font-family: "黑体";
+			margin-bottom: 10px;
+		}
+		.contact p{
+			color: #fff;
+			font-size: 12px;
+			line-height: 16px;
+		}
+		.contact input:first-child{
+			width: 430px;
+			height: 40px;
+			border: none;
+			line-height: 40px;
+			margin-top: 30px;
+			font-size: 20px;
+			vertical-align: top;
+		}
+		.contact input:last-child{
+			width: 80px;
+			height: 40px;
+			border: none;
+			background-color: #6f7278;
+			margin-top: 30px;
+			vertical-align: top;
+		}
+		.contact ul{
+			list-style: none;
+			width: 195px;
+			height: 30px;
+			margin: 0 auto;
+			margin-top: 25px;
+		}
+		.contact ul li{
+			float: left;
+			width: 30px;
+			height: 30px;
+			margin-right: 25px;
+		}
+		.contact ul li:last-child{
+			margin-right: 0;
+		}
+		.contact ul .qq{
+			background: url(images/qq图标.png) no-repeat;
+		}
+		.contact ul .xinlang{
+			background: url(images/新浪图标.png) no-repeat;
+		}
+		.contact ul .twitter{
+			background: url(images/推特图标.png) no-repeat;
+		}
+		.contact ul .gogle{
+			background: url(images/谷歌图标.png) no-repeat;
+		}
+		/*底部*/
+		.footer-contain{
+			width: 100%;
+			height: 55px;
+			background-color: #303039;
+		}
+		.footer{
+			width: 1190px;
+			height: 55px;
+			background-color: #303039;
+			margin: 0 auto;
+			padding: 0 35px 0 55px;
+			line-height: 55px;
+		}
+		.footer p{
+			color: #fff;
+			display: inline-block;
+		}
+		.footer a{
+			text-decoration: none;
+			color: #fff;
+			float: right;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header class="header-container" id="header-container">
+		<h1 class="f-left">
+			<i></i>
+			<a href="#">新世界</a>
+		</h1>
+		<nav class="f-right">
+			<ul>
+				<li><a href="#">首页</a></li> 
+				<li><a href="#">最新活动</a></li>
+				<li><a href="#">项目介绍</a></li>
+				<li><a href="#">爱心社区</a></li>
+				<li><a href="#">关于我们</a></li>
+				<li>
+					<i></i>
+					<a href="">登录</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<!-- 头部导航区结束 -->
+	<div class="banner">
+		<img src="images/banner1.jpg" alt="">
+		<div class="banner-title">
+			<h2>Time of new life</h2>
+			<p>新视点，年轻的人们让我们一起</p>
+			<p>体验新生活，享受新生活</p>
+			<a href="#">开始体验</a>
+		</div>
+	</div>
+	<div class="banner-bottom">
+		<ul>
+			<li>
+				<p>打造全新世界观，让你更爱你的生活</p>
+			</li>
+			<li>
+				<p>丰富多彩的公益活动，发挥世界的主人公意思</p>
+			</li>
+			<li>
+				<p>时尚的新理念，超前体验未知的生活</p>
+			</li>
+			<li>
+				<p>完善的培养机制，培养你全新的世界观</p>
+			</li>
+		</ul>
+	</div>
+	<!-- 中间banner区结束 -->
+	<div class="middle-grey">
+		<div class="middle-grey-wrap">
+			<img src="images/logo.png" alt="">
+			<p>关于新世界，你不知道的还有什么？</p>
+		</div>
+	</div>
+	<!-- 中间灰色区结束 -->
+	<div class="search">
+		<div class="search-shadow"></div>
+		<div class="search-wrap">
+			<h2>查找新世界城市活动信息</h2>
+			<span></span>
+			<p>每个城市的有不同的活动信息，请自主查询需要您所需要了解的城市</p>
+			<!-- 原始方法<ul>
+				<li>
+					<select name="country" id="">
+						<option value="中国" selected="selected">中国</option>
+						<option value="美国">美国</option>
+						<option value="英国">英国</option>
+						<option value="法国">法国</option>
+						<option value="其他">其他</option>
+					</select>
+				</li>
+				<li>
+					<select name="province" id="">
+						<option value="北京市">北京市</option>
+						<option value="天津市">天津市</option>
+						<option value="河北省">河北省</option>
+						<option value="陕西省">陕西省</option>
+						<option value="内蒙古自治区">内蒙古自治区</option>
+						<option value="辽宁省">辽宁省</option>
+					</select>
+				</li>
+				<li>
+					<select name="city" id="">
+						<option value="城市">城市</option>
+					</select>
+				</li>
+				<li>
+					<input type="button" value="搜索">
+				</li>
+			</ul> -->
+			<ul>
+				<li>
+					<span>中国</span>
+					<img src="images/down_arrow.jpg" alt="">
+					<div class="contry-list">
+						<a href=""><i></i>美国</a>
+						<a href=""><i></i>英国</a>
+						<a href=""><i></i>法国</a>
+						<a href=""><i></i>其他</a>
+					</div>
+				</li>
+				<li>
+					<span>北京市</span>
+					<img src="images/down_arrow.jpg" alt="">
+					<div class="contry-list">
+						<a href=""><i></i>天津市</a>
+						<a href=""><i></i>河北省</a>
+						<a href=""><i></i>陕西省</a>
+						<a href=""><i></i>内蒙古自治区</a>
+						<a href=""><i></i>辽宁省</a>
+					</div>
+				</li>
+				<li>
+					<span>北京市</span>
+					<img src="images/down_arrow.jpg" alt="">
+				</li>
+				<li><input type="button" value="搜索"></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 中部搜索区结束 -->
+	<div class="activity">
+		<ul>
+			<li>
+				<img src="images/activity1.jpg" alt="">
+				<h3>北京活动</h3>
+				<p>新社区大联盟</p>
+			</li>
+			<li class="active">
+				<img src="images/activity2.jpg" alt="">
+				<h3>上 海 活 动</h3>
+				<p>夜上海新景观探索</p>
+			</li>
+			<li>
+				<img src="images/activity3.jpg" alt="">
+				<h3>深圳活动</h3>
+				<p>全新海岸线观点站</p>
+			</li>
+			<li>
+				<img src="images/activity4.jpg" alt="">
+				<h3>香港活动</h3>
+				<p>奢侈消费大派送</p>
+			</li>	
+		</ul>
+	</div>
+	<!-- 中间活动区结束 -->
+	<div class="intro">
+		<div class="intro-left f-left">
+			<img src="images/intro1_newWorld.jpg" alt="">
+			<div class="left-Triangle"></div>
+		</div>
+		<div class="intro-right f-left">
+			<h3>新世界/<span>01</span></h3>
+			<p>新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界</p>
+			<a href="#">
+				<p>更多详情</p>
+			</a>
+			<ul>
+				<li class="intro-active"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 中间新世界区域结束 -->
+	<div class="new-time">
+		<div class="new-time-left">
+			<p>新时代</p>
+			<p>关于爱生活的我们</p>
+			<div></div>
+			<a href="#">查看更多</a>
+		</div>
+		<div class="new-time-middle">
+			<p>新时代</p>
+			<p>关于爱生活的我们</p>
+			<div></div>
+			<a href="#">查看更多</a>
+		</div>
+		<div class="new-time-right">
+			<img src="images/new_time.jpg" alt="">
+			<span></span>
+			<div></div>
+		</div>
+	</div>
+	<!-- 新时代区域结束 -->
+	<div class="volunteer clearfix">
+		<div class="volunteer-head">
+			<h3>成为我们的志愿者</h3>
+			<i></i>
+			<p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有机器</p>
+			<p>那就不要犹豫，快来加入我们，成为改变所以人生活的人</p>
+		</div>
+		<div class="volunteer-left">
+			<div class="volunteer-item">
+				<h4>新世界志愿者协议</h4>
+				<p>加入新世界志愿者的人员必须要遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则……</p>
+				<div class="more">more</div>
+			</div>
+			<div class="volunteer-item">
+				<h4>新世界志愿者权利</h4>
+				<p>新世界志愿者享受新世界内部所有自愿共享的权利，并且享受所在的新世界活动的优先参与资格</p>
+				<div class="more">more</div>
+			</div>
+			<div class="volunteer-item">
+				<h4>更多条款</h4>
+			</div>
+
+		</div>
+		<div class="volunteer-right">
+			<form action="">
+				<div class="volunteer-right-nomal volunteer-name">
+					<span>姓名:</span>
+					<input type="text">
+				</div><!-- 
+			 --><div class="volunteer-right-nomal volunteer-age">
+					<span>年龄:</span>
+					<input type="text">
+				</div><!-- 
+			--><div class="volunteer-right-nomal volunteer-tel">
+					<span>联系方式:</span>
+					<input type="text">
+				</div><!-- 
+			--><div class="volunteer-right-nomal volunteer-address">
+					<span>联系地址:</span>
+					<input type="text">
+				</div>
+				<textarea name="" id="" cols="30" rows="10" placeholder="请简单描述您梦想的生活:"></textarea>
+			<!-- 	<div class="volunteer-life">
+					<span>请简单描述您梦想的生活:</span>
+					<input type="textarea">
+				</div> -->
+				<div class="submit-bottom">
+					<input type="submit" value="提交申请">
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- 招募志愿者结束 -->
+	<div class="contact-wrap">
+		<div class="contact">
+			<h3>联系我们</h3>
+			<p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯</p>
+			<p>也可以通过以下任何方式关注我们动态</p>
+			<form action="">
+				<input type="text" placeholder="someone@email.com"><input type="button" value="提交">
+			</form>
+			<ul>
+				<li class="qq"></li>
+				<li class="xinlang"></li>
+				<li class="twitter"></li>
+				<li class="gogle"></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 联系我们结束 -->
+	<div class="footer-contain">
+		<div class="footer">
+			<p>@2016新世界</p>
+			<a href="#header-container">Back to top</a>
+		</div>
+	</div>
+</body>
+</html>
