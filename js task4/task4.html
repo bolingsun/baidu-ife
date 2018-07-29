@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+		padding-top: 10px;
+	}
+	li{
+		float: left;
+		width: 30px;
+		height: 30px;
+		background-color: red;
+		margin-right: 10px;
+		text-align: center;
+		line-height: 30px;
+		color: #fff;
+		cursor: pointer;
+	}
+	button{
+		cursor: pointer;
+	}
+	button:nth-child(3){
+		margin-right: 30px;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<input type="text" id="text_input">
+		<button id="left_in">左侧入</button>
+		<button id="right_in">右侧入</button>
+		<button id="left_out">左侧出</button>
+		<button id="right_out">右侧出</button>
+		<ul id="data_ul">
+			<li>10</li>
+			<li>3</li>
+			<li>7</li>
+			<li>12</li>
+			<li>11</li>
+			<li>30</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		//获取元素
+		var leftIn = document.getElementById("left_in");
+		var rightIn = document.getElementById("right_in");
+		var leftOut = document.getElementById("left_out");
+		var rightOut = document.getElementById("right_out");
+		var dataUl = document.getElementById("data_ul");
+		var textInput = document.getElementById("text_input");
+
+
+		//右侧加入数字
+		rightIn.onclick = function(){
+			var data = textInput.value;
+			if(isNaN(data)){
+				alert("请输入数字");
+			}else{
+				var li = document.createElement("li");
+				if(data != ""){
+					li.innerHTML = data;
+					dataUl.appendChild(li);
+					textInput.value = "";
+				}
+			}
+			
+		}
+		//左侧加入数字
+		leftIn.onclick = function(){
+			var data = textInput.value;
+			if(isNaN(data)){
+				alert("请输入数字");
+			}else{
+				var li = document.createElement("li");
+				if(data != ""){
+					li.innerHTML = data;
+					dataUl.insertBefore(li,dataUl.firstChild);
+					textInput.value = "";
+				}
+			}
+			
+		}
+		//右侧删
+		rightOut.onclick = function(){
+			if(dataUl.lastElementChild){
+				dataUl.removeChild(dataUl.lastElementChild);
+			}
+		}
+		//左侧删
+		leftOut.onclick = function(){
+			if(dataUl.firstElementChild){
+				dataUl.removeChild(dataUl.firstElementChild);
+			}
+		}
+		//点击队列中任何一个元素，则该元素会被从队列中删除
+
+		dataUl.addEventListener("click",function(e){
+			if(event.target.nodeName.toLowerCase() == "li"){
+				dataUl.removeChild(event.target);
+			}
+		})
+
+
+
+
+	</script>
+</body>
+</html>
